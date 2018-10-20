@@ -1,0 +1,33 @@
+repositories {
+  mavenCentral()
+  jcenter()
+}
+
+apply plugin: 'java-library'
+apply plugin: 'maven'
+
+group = 'com.github.zourzouvillys'
+version = 'master-SNAPSHOT'
+  
+sourceCompatibility = 8
+targetCompatibility = 8
+
+jar {
+  manifest {
+    attributes ('Automatic-Module-Name': "zrz.rxjava2.nettybuffers")
+  }
+}      
+
+dependencies {
+
+  api 'io.reactivex.rxjava2:rxjava:2.2.2'
+  api 'io.netty:netty-buffer:4.1.30.Final'
+  
+  implementation 'com.github.davidmoten:rxjava2-extras:0.1.27'
+  
+  compileOnly         'org.eclipse.jdt:org.eclipse.jdt.annotation:2.1.150'
+  testImplementation  'junit:junit:4.12'
+  testImplementation  'org.assertj:assertj-core:3.6.1'
+  testImplementation  'ch.qos.logback:logback-classic:1.2.3'  
+  
+}
